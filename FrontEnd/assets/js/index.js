@@ -15,5 +15,21 @@ async function fetchWorksData() {
 async function displayWorksData() {
 	const works = await fetchWorksData();
 	console.log(works);
+	const gallery = document.querySelector(".gallery");
+
+	works.forEach(function (work) {
+		debugger;
+		const figure = document.createElement("figure");
+
+		const image = document.createElement("img");
+
+		image.src = work.imageUrl;
+
+		const figcaption = document.createElement("figcaption");
+
+		figcaption.textContent = work.title;
+		figure.append(image, figcaption);
+		gallery.append(figure);
+	});
 }
 displayWorksData();
