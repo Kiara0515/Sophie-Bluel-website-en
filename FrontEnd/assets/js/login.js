@@ -10,7 +10,7 @@ async function logUserin(event) {
     const loginData = {
         "email": email.value,
         "password": password.value
-    };
+}};
 
     try {
         const response = await fetch("http://localhost:5678/users/login", {
@@ -20,4 +20,4 @@ async function logUserin(event) {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(loginData)
-        })
+    }}
