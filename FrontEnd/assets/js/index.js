@@ -18,7 +18,6 @@ async function displayWorksData() {
 	const gallery = document.querySelector(".gallery");
 
 	works.forEach(function (work) {
-		debugger;
 		const figure = document.createElement("figure");
 
 		const image = document.createElement("img");
