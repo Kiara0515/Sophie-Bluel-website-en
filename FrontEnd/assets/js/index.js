@@ -32,3 +32,9 @@ async function displayWorksData() {
 	});
 }
 displayWorksData();
+//Check is user is logged in//
+//If logged in make edit buttons appear//
+//Add button in HTML//
+//Add banner in HTML//
+//Show and hide button and banner in HTML and CSS//
+//Show and hide both if token is in session storage//
