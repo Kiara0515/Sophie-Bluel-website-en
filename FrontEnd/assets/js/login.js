@@ -27,6 +27,9 @@ async function logUserin(event) {
 		} else {
 			const data = await response.json();
 			console.log("Data: " + JSON.stringify(data));
+
+			sessionStorage.setItem("token", data.token);
+
 			window.location.href = "index.html";
 		}
 	} catch (error) {
