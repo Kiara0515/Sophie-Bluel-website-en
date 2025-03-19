@@ -183,19 +183,17 @@ li:hover {
 	padding: 4px 19px;
 	border: 2px solid #1d6154;
 	color: #1d6154;
+	display: flex;
 }
 
 .filters {
 	list-style-type: none;
-	padding-left: 50px;
+	padding-left: 0px;
 	display: flex;
-	gap: 20px;
-}
-
-.filters .filter-label {
-	border: none;
-	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 	align-items: center;
+	gap: 20px;
 }
 
 #introduction {
