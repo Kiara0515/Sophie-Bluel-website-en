@@ -50,3 +50,18 @@ function checkIfLoggedIn() {
 }
 
 checkIfLoggedIn();
+
+
+// Log user out when they click on the logout link
+
+const logoutLink = document.getElementById("logout");
+
+logoutLink.addEventListener("click", logoutUser);
+
+function logoutUser() {
+	alert("logging out!");
+	// ✅ clear sessionStorage.clear();
+	sessionStorage.clear();
+	// ✅ send user to login.html
+	window.location.href = "login.html";
+}
