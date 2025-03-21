@@ -181,9 +181,11 @@ li:hover {
 .filters li {
 	border-radius: 25px;
 	padding: 4px 19px;
-	border: 2px solid #1d6154;
+	border: 1px solid #1d6154;
 	color: #1d6154;
 	display: flex;
+	font-weight: bold;
+	text-decoration: none;
 }
 
 .filters {
@@ -280,4 +282,19 @@ footer nav ul {
 	display: flex;
 	justify-content: flex-end;
 	margin: 2em;
+}
+
+.edit-banner {
+	background-color: black;
+	padding: 20px;
+}
+
+.edit-banner p {
+	color: white;
+	text-align: center;
+}
+
+.edit-button {
+	font-size: 14px;
+	color: black;
 }

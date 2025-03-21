@@ -38,3 +38,15 @@ displayWorksData();
 //Add banner in HTML//
 //Show and hide button and banner in HTML and CSS//
 //Show and hide both if token is in session storage//
+
+function checkIfLoggedIn() {
+	const editBanner = document.querySelector(".edit-banner");
+	const editButton = document.querySelector(".edit-button");
+
+	if (sessionStorage.getItem("token") !== null) {
+		editBanner.style.display = "block";
+		editButton.style.display = "inline";
+	}
+}
+
+checkIfLoggedIn();
