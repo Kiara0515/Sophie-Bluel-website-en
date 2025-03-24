@@ -39,6 +39,25 @@ displayWorksData();
 //Show and hide button and banner in HTML and CSS//
 //Show and hide both if token is in session storage//
 
+const logoutLink = document.getElementById("logout");
+const loginLink = document.getElementById("login");
+
+function checkLoginStatus() {
+	return sessionStorage.getItem("authToken") !== null;
+}
+
+const isLoggedIn = checkLoginStatus();
+
+if (loginLink && logoutLink) {
+	if (isLoggedIn) {
+		loginLink.style.display = "none";
+		logoutLink.style.display = "inline";
+	} else {
+		loginLink.style.display = "inline";
+		logoutLink.style.display = "none";
+	}
+}
+
 function checkIfLoggedIn() {
 	const editBanner = document.querySelector(".edit-banner");
 	const editButton = document.querySelector(".edit-button");
@@ -46,15 +65,13 @@ function checkIfLoggedIn() {
 	if (sessionStorage.getItem("token") !== null) {
 		editBanner.style.display = "block";
 		editButton.style.display = "inline";
+		// need to change the login and logout are showing
 	}
 }
 
 checkIfLoggedIn();
 
-
 // Log user out when they click on the logout link
-
-const logoutLink = document.getElementById("logout");
 
 logoutLink.addEventListener("click", logoutUser);
 
