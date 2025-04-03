@@ -77,27 +77,36 @@ function logoutUser() {
 	window.location.href = "login.html";
 }
 
-async function fetchCatergories() {
+async function fetchCategories() {
 	try {
-		const reponse = await fetch("http://localhost:5678/api/categories");
-		if (!reponse.ok) {
+		const response = await fetch("http://localhost:5678/api/categories");
+		if (!response.ok) {
 			alert("Categories is not ok!");
-		} else {
-			const categoriesData = await response.json();
-			console.log("categoriesData" + JSON.stringify(data));
-
-			return categoriesData;
 		}
+		const categoriesData = await response.json();
+		console.log("categoriesData" + JSON.stringify(data));
+
+		return categoriesData;
 	} catch (error) {
 		console.error("Error,error");
 		alert("An error occurred. Please try again.");
 	}
 }
 
-async function displayCatergories() {
-	const categories = await fetchCatergories(
-		"http://localhost:5678/api/categories"
-	);
+async function displayCategories() {
+	const categories = await fetchCategories();
+	//loop through catergories
+	const filters = document.getElementById("filters");
+
+	categories.forEach(function (category) {
+		const filterbutton = document.createElement("button");
+		//create button
+		filterbutton.textContent = category.name;
+
+		//add name
+		//append to filters
+		filterbutton.append(filterbutton);
+	});
 }
 
 async function init() {
