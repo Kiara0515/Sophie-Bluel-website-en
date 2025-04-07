@@ -84,11 +84,11 @@ async function fetchCategories() {
 			alert("Categories is not ok!");
 		}
 		const categoriesData = await response.json();
-		console.log("categoriesData" + JSON.stringify(data));
+		console.log("categoriesData" + JSON.stringify(categoriesData));
 
 		return categoriesData;
 	} catch (error) {
-		console.error("Error,error");
+		console.error("Error", error);
 		alert("An error occurred. Please try again.");
 	}
 }
@@ -98,6 +98,9 @@ async function displayCategories() {
 	//loop through catergories
 	const filters = document.getElementById("filters");
 
+	// create all button
+
+	// put it on the page
 	categories.forEach(function (category) {
 		const filterbutton = document.createElement("button");
 		//create button
@@ -105,9 +108,14 @@ async function displayCategories() {
 
 		//add name
 		//append to filters
-		filterbutton.append(filterbutton);
+		filters.append(filterbutton);
 	});
 }
+
+button.classList.add("filter-button");
+button.style.color = "#1D6154";
+button.style.padding = "4px 19px";
+button.style.borderRadius = "25px";
 
 async function init() {
 	const works = await fetchWorksData();
