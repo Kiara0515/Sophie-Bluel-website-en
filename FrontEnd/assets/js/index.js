@@ -99,23 +99,23 @@ async function displayCategories() {
 	const filters = document.getElementById("filters");
 
 	// create all button
+	const allButton = document.createElement("button");
+	allButton.textContent = "All";
 
+	allButton.classList.add("filter-button");
+	filters.append(allButton);
 	// put it on the page
 	categories.forEach(function (category) {
 		const filterbutton = document.createElement("button");
 		//create button
 		filterbutton.textContent = category.name;
+		filterbutton.classList.add("filter-button");
 
 		//add name
 		//append to filters
 		filters.append(filterbutton);
 	});
 }
-
-button.classList.add("filter-button");
-button.style.color = "#1D6154";
-button.style.padding = "4px 19px";
-button.style.borderRadius = "25px";
 
 async function init() {
 	const works = await fetchWorksData();
